@@ -1,0 +1,86 @@
+  ===== Simulator configuration =====
+  L1_BLOCKSIZE:                    64
+  L1_SIZE:                       8192
+  L1_ASSOC:                         2
+  L1_REPLACEMENT_POLICY:            1
+  L1_WRITE_POLICY:                  0
+  trace_file:           gcc_trace.txt
+  ===================================
+
+===== L1 contents =====
+set   0:   40033 D   7b035 D
+set   1:   40056 D   40033 D
+set   2:   7b035 D   4001f  
+set   3:   40056 D   40055 D
+set   4:   40055 D   40056 D
+set   5:   40056 D   7b035 D
+set   6:   42355     4001f  
+set   7:   4003f D   40056 D
+set   8:   40038 D   40056 D
+set   9:   40048     40038 D
+set  10:   40029     40001  
+set  11:   4001f     40001  
+set  12:   40001     4001f  
+set  13:   40001     40051 D
+set  14:   40031 D   40051 D
+set  15:   40035 D   40051 D
+set  16:   40051 D   40031  
+set  17:   40051 D   40031  
+set  18:   4002f     40031  
+set  19:     df8     4001f  
+set  20:   4001f     40036 D
+set  21:   4001f     40027  
+set  22:   40027     4003e  
+set  23:   40027     40051 D
+set  24:   4002a D   4001f  
+set  25:     df8     40044 D
+set  26:   40051 D   4003e D
+set  27:   40037 D   40051 D
+set  28:   40051 D   4002f D
+set  29:   40035 D   40051 D
+set  30:   40051 D   40035  
+set  31:   40055 D   40051 D
+set  32:   40136 D   4003e D
+set  33:   40035 D   40051 D
+set  34:   40051 D   40055 D
+set  35:   40035 D   40051 D
+set  36:   40138 D   7b033 D
+set  37:   7b033 D   40042 D
+set  38:   40051 D   40055 D
+set  39:   40051 D   40055 D
+set  40:   7b033 D   40051 D
+set  41:   40051 D   40055 D
+set  42:   40051 D   40055 D
+set  43:   40051 D   40055 D
+set  44:   40051 D   40055 D
+set  45:   40055 D   40051 D
+set  46:   40051 D   40031 D
+set  47:   40051 D   40031 D
+set  48:   40051 D   40055 D
+set  49:   40055 D   40051 D
+set  50:   7b034 D   40051 D
+set  51:   7b034 D   4003e D
+set  52:   40054 D   40055 D
+set  53:   7b034 D   40035  
+set  54:   4003f D   40055 D
+set  55:   40036 D   40055 D
+set  56:   40055 D   40039  
+set  57:   40022 D   4003e D
+set  58:   40031 D   40047  
+set  59:   40047     40055 D
+set  60:   40047     7b034 D
+set  61:   7b034 D   40047  
+set  62:   4001e     40031 D
+set  63:   4001c     40032 D
+
+  ====== Simulation results (raw) ======
+  a. number of L1 reads:           63640
+  b. number of L1 read misses:      3492
+  c. number of L1 writes:          36360
+  d. number of L1 write misses:     2096
+  e. L1 miss rate:                0.0559
+  f. number of writebacks from L1:  2415
+  g. total memory traffic:          8003
+
+  ==== Simulation results (performance) ====
+  1. average access time:         1.6684 ns

@@ -1,0 +1,1046 @@
+  ===== Simulator configuration =====
+  L1_BLOCKSIZE:                    16
+  L1_SIZE:                      16384
+  L1_ASSOC:                         1
+  L1_REPLACEMENT_POLICY:            0
+  L1_WRITE_POLICY:                  0
+  trace_file:           gcc_trace.txt
+  ===================================
+
+===== L1 contents =====
+set   0:   10015 D
+set   1:   10015 D
+set   2:   10015 D
+set   3:   10015 D
+set   4:   10015 D
+set   5:   10015 D
+set   6:   10015 D
+set   7:   10015 D
+set   8:   10015 D
+set   9:   10015 D
+set  10:   10015 D
+set  11:   10015 D
+set  12:   10015 D
+set  13:   10015 D
+set  14:   10015 D
+set  15:   10015 D
+set  16:   10015 D
+set  17:   10015 D
+set  18:   10015 D
+set  19:   10015 D
+set  20:   10015 D
+set  21:   10015 D
+set  22:   10015 D
+set  23:   10015 D
+set  24:   10015 D
+set  25:   10015 D
+set  26:   10015 D
+set  27:   10015 D
+set  28:   10015 D
+set  29:   10015 D
+set  30:   10015 D
+set  31:   10015 D
+set  32:   10015 D
+set  33:   10015 D
+set  34:   1000e D
+set  35:   10015 D
+set  36:   10012  
+set  37:   1000e D
+set  38:   1000e D
+set  39:   1000e D
+set  40:   10015 D
+set  41:   10015 D
+set  42:   10015 D
+set  43:   1000e  
+set  44:   10015 D
+set  45:   10015 D
+set  46:   10015 D
+set  47:   1000c D
+set  48:   10015 D
+set  49:   10015 D
+set  50:   10015 D
+set  51:   10015 D
+set  52:   10015 D
+set  53:   10015 D
+set  54:   10015 D
+set  55:   10015 D
+set  56:   10015 D
+set  57:   10015 D
+set  58:   10015 D
+set  59:   10015 D
+set  60:   10015 D
+set  61:   1000e  
+set  62:   10015 D
+set  63:   10015 D
+set  64:   10015 D
+set  65:   10015 D
+set  66:   10015 D
+set  67:   10015 D
+set  68:   10015 D
+set  69:   10015 D
+set  70:   10015 D
+set  71:   10015 D
+set  72:   10015 D
+set  73:   10015 D
+set  74:   10015 D
+set  75:   10015 D
+set  76:   10015 D
+set  77:   1000c D
+set  78:   1000c D
+set  79:   10015 D
+set  80:   10015 D
+set  81:   10015 D
+set  82:   10015 D
+set  83:   10015 D
+set  84:   10015 D
+set  85:   10015 D
+set  86:   10015 D
+set  87:   10015 D
+set  88:   10015 D
+set  89:   10015 D
+set  90:   10015 D
+set  91:   10011 D
+set  92:   10015 D
+set  93:   10015 D
+set  94:   10011 D
+set  95:   10011 D
+set  96:   10015 D
+set  97:   10011 D
+set  98:   10015 D
+set  99:   10015 D
+set 100:   10011 D
+set 101:   10015 D
+set 102:   10015 D
+set 103:   10015 D
+set 104:   10015 D
+set 105:   10015 D
+set 106:   10015 D
+set 107:   10015 D
+set 108:   10011 D
+set 109:   10015 D
+set 110:   10015 D
+set 111:   10015 D
+set 112:   10015 D
+set 113:   10015 D
+set 114:   10015 D
+set 115:   10015 D
+set 116:   10015 D
+set 117:   10015 D
+set 118:   10015 D
+set 119:   10015 D
+set 120:   10015 D
+set 121:   10015 D
+set 122:   10015 D
+set 123:   10015 D
+set 124:   10015 D
+set 125:   10015 D
+set 126:   10015 D
+set 127:   10015 D
+set 128:   10015 D
+set 129:   10015 D
+set 130:   10015 D
+set 131:   10015 D
+set 132:   10015 D
+set 133:   10015 D
+set 134:   10015 D
+set 135:   10015 D
+set 136:   10015 D
+set 137:   10015 D
+set 138:   10015 D
+set 139:   10015 D
+set 140:   10015 D
+set 141:   1000f D
+set 142:   10015 D
+set 143:   10015 D
+set 144:   10015 D
+set 145:   10015 D
+set 146:   10015 D
+set 147:   10015 D
+set 148:   10015 D
+set 149:   10015 D
+set 150:   10015 D
+set 151:   10015 D
+set 152:   10015 D
+set 153:   10015 D
+set 154:   10015 D
+set 155:   10015 D
+set 156:   10015 D
+set 157:   10015 D
+set 158:   10015 D
+set 159:   10015 D
+set 160:   10015 D
+set 161:   10015 D
+set 162:   10015 D
+set 163:   10015 D
+set 164:   10015 D
+set 165:   10015 D
+set 166:   10015 D
+set 167:   10015 D
+set 168:   10015 D
+set 169:   10015 D
+set 170:   10015 D
+set 171:   10015 D
+set 172:   10015 D
+set 173:   10015 D
+set 174:   10015 D
+set 175:   10015 D
+set 176:   10015 D
+set 177:   10015 D
+set 178:   10015 D
+set 179:   10015 D
+set 180:   10015 D
+set 181:   10015 D
+set 182:   10015 D
+set 183:   10015 D
+set 184:   10015 D
+set 185:   10015 D
+set 186:   10015 D
+set 187:   10015 D
+set 188:   10015 D
+set 189:   10015 D
+set 190:   10015 D
+set 191:   10015 D
+set 192:   10015 D
+set 193:   10015 D
+set 194:   10015 D
+set 195:   10015 D
+set 196:   10015 D
+set 197:   10015 D
+set 198:   10015 D
+set 199:   10015 D
+set 200:   10015 D
+set 201:   10015 D
+set 202:   10015 D
+set 203:   10015 D
+set 204:   10015 D
+set 205:   10015 D
+set 206:   10015 D
+set 207:   10015 D
+set 208:   10015 D
+set 209:   10015 D
+set 210:   10015 D
+set 211:   10015 D
+set 212:   10015 D
+set 213:   10015 D
+set 214:   10015 D
+set 215:   10015 D
+set 216:   10015 D
+set 217:   10015 D
+set 218:   10015 D
+set 219:   10015 D
+set 220:   10015 D
+set 221:   10015 D
+set 222:   10015 D
+set 223:   10015 D
+set 224:   10015 D
+set 225:   10015 D
+set 226:   10015 D
+set 227:   10015 D
+set 228:   10015 D
+set 229:   10015 D
+set 230:   10015 D
+set 231:   10015 D
+set 232:   10015 D
+set 233:   10015 D
+set 234:   10015 D
+set 235:   10015 D
+set 236:   10015 D
+set 237:   10015 D
+set 238:   10015 D
+set 239:   10015 D
+set 240:   10015 D
+set 241:   10015 D
+set 242:   10015 D
+set 243:   10015 D
+set 244:   10015 D
+set 245:   10015 D
+set 246:   10007  
+set 247:   10007  
+set 248:   10007  
+set 249:   10007  
+set 250:   10007  
+set 251:   10007  
+set 252:   1000d D
+set 253:   10007  
+set 254:   1000d D
+set 255:   10015 D
+set 256:   10015 D
+set 257:   10015 D
+set 258:   10015 D
+set 259:   10015 D
+set 260:   10015 D
+set 261:   10015 D
+set 262:   10015 D
+set 263:   10015 D
+set 264:   10015 D
+set 265:   10015 D
+set 266:   10015 D
+set 267:   10015 D
+set 268:   10015 D
+set 269:   10015 D
+set 270:   10015 D
+set 271:   10015 D
+set 272:   10015 D
+set 273:   10015 D
+set 274:   10015 D
+set 275:   10015 D
+set 276:   10015 D
+set 277:   10015 D
+set 278:   10015 D
+set 279:   10015 D
+set 280:   10015 D
+set 281:   10015 D
+set 282:   10015 D
+set 283:   10015 D
+set 284:   10015 D
+set 285:   1000d D
+set 286:   10015 D
+set 287:   10015 D
+set 288:   10015 D
+set 289:   10015 D
+set 290:   10015 D
+set 291:   10015 D
+set 292:   10015 D
+set 293:   1000a  
+set 294:   10015 D
+set 295:   10015 D
+set 296:   1000a  
+set 297:   10015 D
+set 298:   10015 D
+set 299:   10000  
+set 300:   10000  
+set 301:   10000  
+set 302:   10000  
+set 303:   10000  
+set 304:   10000  
+set 305:   10000  
+set 306:   10000  
+set 307:   10000  
+set 308:   10000  
+set 309:   10000  
+set 310:   10000  
+set 311:   10014 D
+set 312:   1000c D
+set 313:   1000c  
+set 314:   10014 D
+set 315:   10014 D
+set 316:   10014 D
+set 317:   10014 D
+set 318:   10014 D
+set 319:   1000d D
+set 320:   1000c  
+set 321:   10014 D
+set 322:   10014 D
+set 323:   10014 D
+set 324:   1000c  
+set 325:   1000c  
+set 326:   10014 D
+set 327:   1000c  
+set 328:   1000c  
+set 329:   10014 D
+set 330:   1000c  
+set 331:   1000c  
+set 332:   10014 D
+set 333:   1000c  
+set 334:   10014 D
+set 335:   10014 D
+set 336:   10014 D
+set 337:   1000d  
+set 338:   1000d  
+set 339:   1000d  
+set 340:   1000d  
+set 341:   1000d  
+set 342:   1000d  
+set 343:   1000d  
+set 344:   1000c D
+set 345:   1000d  
+set 346:   10014 D
+set 347:   10014 D
+set 348:   10014 D
+set 349:   10014 D
+set 350:   10014 D
+set 351:   10014 D
+set 352:   10014 D
+set 353:   1000d  
+set 354:   10014 D
+set 355:   10014 D
+set 356:   10014 D
+set 357:   10014 D
+set 358:   10014 D
+set 359:   10014 D
+set 360:   10014 D
+set 361:   10014 D
+set 362:   10014 D
+set 363:   10014 D
+set 364:   10014 D
+set 365:   10014 D
+set 366:   10014 D
+set 367:   10014 D
+set 368:   10014 D
+set 369:   10014 D
+set 370:   10014 D
+set 371:   10014 D
+set 372:   10014 D
+set 373:   1000d D
+set 374:   10014 D
+set 375:   1000d  
+set 376:   10014 D
+set 377:   1000d  
+set 378:   1000d D
+set 379:   10014 D
+set 380:   10014 D
+set 381:   10014 D
+set 382:   10014 D
+set 383:   10014 D
+set 384:   10014 D
+set 385:   10014 D
+set 386:   10014 D
+set 387:   10014 D
+set 388:   10014 D
+set 389:   10014 D
+set 390:   10014 D
+set 391:   1000d D
+set 392:   10014 D
+set 393:   10014 D
+set 394:   10014 D
+set 395:   10014 D
+set 396:   1000d D
+set 397:   10014 D
+set 398:   1000d  
+set 399:   10014 D
+set 400:   10014 D
+set 401:   10014 D
+set 402:   10014 D
+set 403:   10014 D
+set 404:   10014 D
+set 405:   10014 D
+set 406:   10014 D
+set 407:   10014 D
+set 408:   10014 D
+set 409:   10014 D
+set 410:   10014 D
+set 411:   10014 D
+set 412:   10014 D
+set 413:   10014 D
+set 414:   10014 D
+set 415:   10014 D
+set 416:   10014 D
+set 417:   10014 D
+set 418:   10014 D
+set 419:   10014 D
+set 420:   10014 D
+set 421:   10014 D
+set 422:   10014 D
+set 423:   10014 D
+set 424:   10014 D
+set 425:   10014 D
+set 426:   10014 D
+set 427:   10014 D
+set 428:   10014 D
+set 429:   10014 D
+set 430:   10014 D
+set 431:   10014 D
+set 432:   10014 D
+set 433:   10014 D
+set 434:   10014 D
+set 435:   10014 D
+set 436:   10014 D
+set 437:   10014 D
+set 438:   10014 D
+set 439:   10014 D
+set 440:   10014 D
+set 441:   10014 D
+set 442:   10014 D
+set 443:   10014 D
+set 444:   10014 D
+set 445:   1000c D
+set 446:   1000c D
+set 447:   1000c D
+set 448:   10014 D
+set 449:   10014 D
+set 450:   10014 D
+set 451:   10014 D
+set 452:   10014 D
+set 453:   10014 D
+set 454:   10014 D
+set 455:   10014 D
+set 456:   10014 D
+set 457:   10014 D
+set 458:   10014 D
+set 459:   10015 D
+set 460:   10015 D
+set 461:   10015 D
+set 462:   10015 D
+set 463:   10015 D
+set 464:   10015 D
+set 465:   10015 D
+set 466:   10015 D
+set 467:   10015 D
+set 468:   10015 D
+set 469:   1000d  
+set 470:   10015 D
+set 471:   10015 D
+set 472:   10015 D
+set 473:   10015 D
+set 474:   10015 D
+set 475:   10015 D
+set 476:   10015 D
+set 477:   10015 D
+set 478:   10015 D
+set 479:   10015 D
+set 480:   1000e  
+set 481:   10015 D
+set 482:   10015 D
+set 483:   10015 D
+set 484:   10015 D
+set 485:   10015 D
+set 486:   10015 D
+set 487:   10015 D
+set 488:   1000c D
+set 489:   1000c D
+set 490:   1000c D
+set 491:   1000c D
+set 492:   10015 D
+set 493:   10015 D
+set 494:   10015 D
+set 495:   1000d D
+set 496:   10015 D
+set 497:   10015 D
+set 498:   10015 D
+set 499:   10015 D
+set 500:   1000c D
+set 501:   1000c D
+set 502:   10015 D
+set 503:   10015 D
+set 504:   1000c D
+set 505:   10015 D
+set 506:   1000d D
+set 507:   10015 D
+set 508:   10015 D
+set 509:   10015 D
+set 510:   10015 D
+set 511:   10015 D
+set 512:   10015 D
+set 513:   10015 D
+set 514:   10015 D
+set 515:   10015 D
+set 516:   10015 D
+set 517:   10015 D
+set 518:   10015 D
+set 519:   1000d D
+set 520:   10015 D
+set 521:   10015 D
+set 522:   10015 D
+set 523:   10015 D
+set 524:   10015 D
+set 525:   10015 D
+set 526:   10015 D
+set 527:   10015 D
+set 528:   10015 D
+set 529:   10015 D
+set 530:   10015 D
+set 531:   10015 D
+set 532:   10015 D
+set 533:   10015 D
+set 534:   10015 D
+set 535:   10015 D
+set 536:   10015 D
+set 537:   10015 D
+set 538:   10015 D
+set 539:   10015 D
+set 540:   10015 D
+set 541:   1000e  
+set 542:   10015 D
+set 543:   10015 D
+set 544:   1000e D
+set 545:   1000e D
+set 546:   1000e D
+set 547:   10015 D
+set 548:   10015 D
+set 549:   10015 D
+set 550:   10015 D
+set 551:   10015 D
+set 552:   10015 D
+set 553:   10015 D
+set 554:   1000f D
+set 555:   1000f D
+set 556:   1000f D
+set 557:   1000f D
+set 558:   1000f D
+set 559:   1000f D
+set 560:   1000f D
+set 561:   1000f D
+set 562:   1000f D
+set 563:   1000f D
+set 564:   1000f D
+set 565:   1000f D
+set 566:   1000f D
+set 567:   1000f D
+set 568:   1000f D
+set 569:   1000f D
+set 570:   1000e D
+set 571:   1000e D
+set 572:   1000f D
+set 573:   1000f D
+set 574:   1000f D
+set 575:   1000e D
+set 576:   1000f D
+set 577:   1000f D
+set 578:   1000f D
+set 579:   1000f D
+set 580:   1000f D
+set 581:   1000f D
+set 582:   1000f D
+set 583:   1000f D
+set 584:   1000f D
+set 585:   1000f D
+set 586:   1000f D
+set 587:   1000d D
+set 588:   1000d D
+set 589:   1000d D
+set 590:   1000d D
+set 591:   1000d D
+set 592:   1000d D
+set 593:   1000d D
+set 594:   1000d D
+set 595:   1000d D
+set 596:   1000d D
+set 597:   1000f D
+set 598:   1000d D
+set 599:   10013 D
+set 600:   1000f  
+set 601:   1000f D
+set 602:   1000d D
+set 603:   1000a  
+set 604:   10013 D
+set 605:   1000d D
+set 606:   1000d D
+set 607:   10013 D
+set 608:   1000f D
+set 609:   1000f D
+set 610:   1000a D
+set 611:   1000f D
+set 612:   1000f D
+set 613:   1000f D
+set 614:   1000f D
+set 615:   1000f D
+set 616:   1000f D
+set 617:   10013 D
+set 618:   1000c D
+set 619:   1000c D
+set 620:   10013 D
+set 621:   10013 D
+set 622:   10013 D
+set 623:   10011  
+set 624:   10011 D
+set 625:   10013 D
+set 626:   10013 D
+set 627:   1000c D
+set 628:   10013 D
+set 629:   10013 D
+set 630:   10013 D
+set 631:   10013 D
+set 632:   1000a D
+set 633:   1000a  
+set 634:   1000d D
+set 635:   1000d D
+set 636:   1000d D
+set 637:   1000d D
+set 638:   10013 D
+set 639:   1000e D
+set 640:   1000a D
+set 641:   1000f D
+set 642:   1000d D
+set 643:   10013 D
+set 644:   10013 D
+set 645:   10013 D
+set 646:   10013 D
+set 647:   10013 D
+set 648:   10010  
+set 649:   10013 D
+set 650:   10013 D
+set 651:   10013 D
+set 652:   10013 D
+set 653:   10013 D
+set 654:   10013 D
+set 655:   10013 D
+set 656:   10013 D
+set 657:   10013 D
+set 658:   10013 D
+set 659:   10013 D
+set 660:   10010 D
+set 661:   10010 D
+set 662:   10010 D
+set 663:   10013 D
+set 664:   10010 D
+set 665:   1000f D
+set 666:   10010 D
+set 667:   10010 D
+set 668:   10010 D
+set 669:   10010 D
+set 670:   10010 D
+set 671:   10010 D
+set 672:   10010 D
+set 673:   10010 D
+set 674:   10010 D
+set 675:   10010 D
+set 676:   10010 D
+set 677:   10010 D
+set 678:   10010 D
+set 679:   10010 D
+set 680:   10010 D
+set 681:   10010 D
+set 682:   10010 D
+set 683:   10010 D
+set 684:   10010 D
+set 685:   10010 D
+set 686:   10010 D
+set 687:   10010 D
+set 688:   10010 D
+set 689:   10010 D
+set 690:   10010 D
+set 691:   1000d D
+set 692:   1000d D
+set 693:   1000d D
+set 694:   1000d D
+set 695:   1000d D
+set 696:   1000d D
+set 697:   1000d D
+set 698:   1000d D
+set 699:   1000f D
+set 700:   1000f D
+set 701:   1000f D
+set 702:   10010 D
+set 703:   10010 D
+set 704:   10010 D
+set 705:   10010 D
+set 706:   10010 D
+set 707:   10010 D
+set 708:   10010 D
+set 709:   10010 D
+set 710:   10010 D
+set 711:   10010 D
+set 712:   10010 D
+set 713:   10010 D
+set 714:   10010 D
+set 715:   10010 D
+set 716:   10010 D
+set 717:   10010 D
+set 718:   1000f D
+set 719:   10010 D
+set 720:   10010 D
+set 721:   10010 D
+set 722:   10010 D
+set 723:   10010 D
+set 724:   10010 D
+set 725:   10010 D
+set 726:   10010 D
+set 727:   10010 D
+set 728:   10010 D
+set 729:   10010 D
+set 730:   10010 D
+set 731:   10010 D
+set 732:   10010 D
+set 733:   1000d D
+set 734:   1000d D
+set 735:   1000d D
+set 736:   10010 D
+set 737:   10014 D
+set 738:   10014 D
+set 739:   1000d  
+set 740:   1000f D
+set 741:   10014 D
+set 742:   10014 D
+set 743:   10014 D
+set 744:   10014 D
+set 745:   10014 D
+set 746:   10014 D
+set 747:   10014 D
+set 748:   10014 D
+set 749:   10014 D
+set 750:   10014 D
+set 751:   10014 D
+set 752:   10014 D
+set 753:   1000f D
+set 754:   10007  
+set 755:   10007  
+set 756:   10007  
+set 757:   10014 D
+set 758:   10014 D
+set 759:   10014 D
+set 760:   10014 D
+set 761:   10014 D
+set 762:   10007  
+set 763:   10007  
+set 764:   10007  
+set 765:   10014 D
+set 766:   1000c D
+set 767:   1000c D
+set 768:   1000c D
+set 769:   1000c D
+set 770:   1000c D
+set 771:   1000c D
+set 772:   1000c D
+set 773:   1000c D
+set 774:   10014 D
+set 775:   10014 D
+set 776:   10014 D
+set 777:   10007  
+set 778:   10014 D
+set 779:   10014 D
+set 780:   10014 D
+set 781:   10014 D
+set 782:   10014 D
+set 783:   10014 D
+set 784:   10014 D
+set 785:   10014 D
+set 786:   10014 D
+set 787:   10014 D
+set 788:   10014 D
+set 789:   10014 D
+set 790:   10014 D
+set 791:   10014 D
+set 792:   10007  
+set 793:   10014 D
+set 794:   10014 D
+set 795:   10014 D
+set 796:   10014 D
+set 797:   10014 D
+set 798:   10014 D
+set 799:   1000f D
+set 800:   10014 D
+set 801:   10014 D
+set 802:   10014 D
+set 803:   10014 D
+set 804:   10014 D
+set 805:   10014 D
+set 806:   10014 D
+set 807:   10014 D
+set 808:   10014 D
+set 809:   10007  
+set 810:   10014 D
+set 811:   10014 D
+set 812:   10014 D
+set 813:   10007  
+set 814:   10007  
+set 815:   10007  
+set 816:   10007  
+set 817:   1000b D
+set 818:   10007  
+set 819:   10014 D
+set 820:   10014 D
+set 821:   10014 D
+set 822:   10014 D
+set 823:   10014 D
+set 824:   10014 D
+set 825:   1000b D
+set 826:   10014 D
+set 827:   10014 D
+set 828:   10014 D
+set 829:   10014 D
+set 830:   10014 D
+set 831:   10010 D
+set 832:   1000b D
+set 833:   10014 D
+set 834:   10014 D
+set 835:   10014 D
+set 836:   10014 D
+set 837:   10014 D
+set 838:   10014 D
+set 839:   1000b D
+set 840:   10014 D
+set 841:   1000b D
+set 842:   1000b  
+set 843:   10014 D
+set 844:   10014 D
+set 845:   10014 D
+set 846:   10007  
+set 847:   10007  
+set 848:   10014 D
+set 849:   10007  
+set 850:   10007  
+set 851:   10014 D
+set 852:   10007  
+set 853:   10014 D
+set 854:   10014 D
+set 855:   10009  
+set 856:   10009  
+set 857:   10014 D
+set 858:   10014 D
+set 859:   10009  
+set 860:   10009  
+set 861:   10009  
+set 862:   10014 D
+set 863:   10009  
+set 864:   10014 D
+set 865:   10014 D
+set 866:   10009  
+set 867:   10009  
+set 868:   10014 D
+set 869:   10009  
+set 870:   10014 D
+set 871:   10014 D
+set 872:   10014 D
+set 873:   10014 D
+set 874:   10014 D
+set 875:   10014 D
+set 876:   10010 D
+set 877:   10014 D
+set 878:   10014 D
+set 879:   1000d D
+set 880:   1000b D
+set 881:   1000b D
+set 882:   10014 D
+set 883:   1000b D
+set 884:   10014 D
+set 885:   10014 D
+set 886:   10014 D
+set 887:   10014 D
+set 888:   10014 D
+set 889:   10014 D
+set 890:   10014 D
+set 891:   10014 D
+set 892:   10014 D
+set 893:   10014 D
+set 894:   10014 D
+set 895:   10014 D
+set 896:   10014 D
+set 897:   10014 D
+set 898:   10014 D
+set 899:   10014 D
+set 900:   10014 D
+set 901:   10014 D
+set 902:   10014 D
+set 903:   1000d D
+set 904:   10014 D
+set 905:   10014 D
+set 906:   10014 D
+set 907:   10014 D
+set 908:   10014 D
+set 909:   1000d D
+set 910:   10014 D
+set 911:   10014 D
+set 912:   1ec0c D
+set 913:   1000f D
+set 914:   10014 D
+set 915:   1ec0c D
+set 916:   1000f D
+set 917:   10014 D
+set 918:   10014 D
+set 919:   1ec0c D
+set 920:   10014 D
+set 921:   10014 D
+set 922:   10014 D
+set 923:   10014 D
+set 924:   1000f D
+set 925:   10014 D
+set 926:   1000f D
+set 927:   1000f D
+set 928:   1ec0c D
+set 929:   1000f D
+set 930:   1000f D
+set 931:   1000f D
+set 932:   1000f D
+set 933:   1000f D
+set 934:   1000d D
+set 935:   10014 D
+set 936:   10014 D
+set 937:   10014 D
+set 938:   10014 D
+set 939:   10014 D
+set 940:   10014 D
+set 941:   10014 D
+set 942:   10014 D
+set 943:   10014 D
+set 944:   10014 D
+set 945:   10014 D
+set 946:   1000b D
+set 947:   1000f D
+set 948:   10014 D
+set 949:   10014 D
+set 950:   10014 D
+set 951:   10014 D
+set 952:   10014 D
+set 953:   1000d  
+set 954:   1000d D
+set 955:   10014 D
+set 956:   1000f D
+set 957:   10014 D
+set 958:   10014 D
+set 959:   10014 D
+set 960:   10014 D
+set 961:   10014 D
+set 962:   10014 D
+set 963:   10014 D
+set 964:   10014 D
+set 965:   10014 D
+set 966:   10014 D
+set 967:   10014 D
+set 968:   10014 D
+set 969:   10014 D
+set 970:   10014 D
+set 971:   10014 D
+set 972:   10014 D
+set 973:   1000f D
+set 974:   10014 D
+set 975:   1000f D
+set 976:   1000f D
+set 977:   1000f D
+set 978:   1000c D
+set 979:   10014 D
+set 980:   10014 D
+set 981:   10014 D
+set 982:   10014 D
+set 983:   10014 D
+set 984:   1000f D
+set 985:   1000f D
+set 986:   10014 D
+set 987:   1000f D
+set 988:   10014 D
+set 989:   10014 D
+set 990:   10014 D
+set 991:   10014 D
+set 992:   10014 D
+set 993:   10014 D
+set 994:   10014 D
+set 995:   10014 D
+set 996:   10014 D
+set 997:   10014 D
+set 998:   10014 D
+set 999:   10014 D
+set1000:   10011  
+set1001:   10011  
+set1002:   10011  
+set1003:   10011  
+set1004:   10011  
+set1005:   10011  
+set1006:   10011  
+set1007:   10011  
+set1008:   10011  
+set1009:   10011  
+set1010:   10011  
+set1011:   10011  
+set1012:   10011  
+set1013:   10011  
+set1014:   10011  
+set1015:   10011  
+set1016:   10011  
+set1017:   10014 D
+set1018:   10014 D
+set1019:   10014 D
+set1020:   10014 D
+set1021:   10014 D
+set1022:   10014 D
+set1023:   10014 D
+
+  ====== Simulation results (raw) ======
+  a. number of L1 reads:           63640
+  b. number of L1 read misses:      2138
+  c. number of L1 writes:          36360
+  d. number of L1 write misses:     4579
+  e. L1 miss rate:                0.0672
+  f. number of writebacks from L1:  3939
+  g. total memory traffic:         10656
+
+  ==== Simulation results (performance) ====
+  1. average access time:         1.7551 ns

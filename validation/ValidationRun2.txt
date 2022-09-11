@@ -1,0 +1,24 @@
+  ===== Simulator configuration =====
+  L1_BLOCKSIZE:                   128
+  L1_SIZE:                       2048
+  L1_ASSOC:                         8
+  L1_REPLACEMENT_POLICY:            0
+  L1_WRITE_POLICY:                  1
+  trace_file:            go_trace.txt
+  ===================================
+
+===== L1 contents =====
+set   0:  4004e0    400321    40031f    40040c    400320    40040b    4004e1    40040d  
+set   1:  40040c    4004e1    4008b3    400652    400320    40031f    40040d    4004e0  
+
+  ====== Simulation results (raw) ======
+  a. number of L1 reads:           60613
+  b. number of L1 read misses:       984
+  c. number of L1 writes:          39387
+  d. number of L1 write misses:    26075
+  e. L1 miss rate:                0.2706
+  f. number of writebacks from L1:     0
+  g. total memory traffic:         40371
+
+  ==== Simulation results (performance) ====
+  1. average access time:         7.1539 ns
