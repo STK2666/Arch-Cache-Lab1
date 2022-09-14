@@ -63,7 +63,73 @@ bool write(addr){
 }
 ```
 
+- 编写第二组读写策略时发现写策略中应该内部调用替换策略，这样的话就应该修改计数器的调用位置，现有设计耦合度太高。
 
+```C++
+bool read(addr,cache){
+	bool Miss = isMiss(addr);
+    bool WriteBack = replaceStrategy(addr, cache);//replace中有命中后相应操作：命中块count++还是其他的块count++
+    if(Miss)	cache.readMiss++;
+    if(WriteBack)	cache.writeBack++;
+    cache.readCount++;
+}
+
+bool write(addr,cache){
+	bool Miss = isMiss(addr);
+    bool Dirty = writeStrategy(addr, cache);
+    if(Miss)	cache.writeMiss++;
+    else	replaceStrategy(addr, cache);
+    if(WriteBack)	cache.writeBack++;
+    cache.writeCount++;
+}
+```
+
+- Hit：replaceStrategy(), mark dirty
+- Not hit：
+  - Replace: replaceStrategy(), mark dirty
+  - Not replace: writeback; 
+
+|      | replaced counter | maintain counters | miss | writeBack |
+| ---- | ---------------- | ----------------- | ---- | --------- |
+| LRU  | biggest          | set 0, else ++    |      |           |
+| LFU  | smallest         | ++                |      |           |
+
+读：是否命中，然后replace（其中包括命中后的操作，替换后的初始化
+
+写：是否命中，根据写策略决定是否替换，然后replace
+
+#### 替换策略之间的相同点
+
+编码过程中发现简单的根据命令行参数，通过函数指针想要区分各种策略，会导致替换策略和写策略当中有许多耦合部分，所以需要进一步分解功能，这就需要我们对整个读写过程进行划分，提取出不同替换策略或不同写策略之间耦合的流程，将不同策略间本质区别的部分提取出来
+
+##### 读操作
+
+1. 首先判断该地址是否命中，这里我们将该操作定义为Class Cache的 isHit() 方法，方法中应该将是否命中的结果返回。
+2. 判断读写命中后：
+   - hit: 两种策略都不需要替换，而是“维护”数据，即根据替换策略，对相应的“计数器”进行对应的维护操作。这里我们将该操作定义为Class Cache的 maintainCounter() 方法，初始化时我们根据命令行参数选择相应策略的函数指针，该函数中应当将读取的地址的索引，是否命中的结果作为参数传递进去。
+   - miss: 两种策略都需要替换，根据 replace() 方法进行替换，该函数需要相应地址的索引，相应的组索引，进行替换，需要记录替换的过程是否有写回。之后再通过maintainCounter() 方法进行初始化替换块的counter，或者维护另外块的counter
+3. 完成后，我们需要维护三个变量，读次数，读缺失次数，写回次数
+   - 读次数：一定++
+   - 读缺失：根据 isHit() 方法的结果
+   - 写回次数：根据 replace() 的结果
+
+##### 写操作
+
+1. 同读操作1.
+2. 判断读写命中后：先“写维护”，后“维护计数器”
+   - hit: 除了根据替换策略完成不同 maintainCounter() 方法，此外还需根据不同的写策略，对相应Block进行“写维护”，这里我们将该操作定义为Class Cache的 writeMaintain() 方法，即：
+     - WBWA: 相应Block标记Dirty
+     - WTNA: 相应Block写回内存，即WriteBack
+   - miss: 也需要在进行 maintainCounter() 之外进行“写维护”：
+     - WBWA: 调用对应替换策略的 replace() 函数，记录是否WriteBack，相应Block标记Dirty
+     - WTNA: 直接写回内存，WriteBack
+
+3. 完成后，我们需要维护三个变量，写次数，写缺失次数，写回次数
+   - 写次数：一定++
+   - 写缺失：根据 isHit() 方法的结果
+   - 写回次数：
+     - WBWA: 默认false，根据 replace() 的结果
+     - WTNA: 一定++
 
 ### 数据流图
 

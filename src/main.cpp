@@ -1,6 +1,7 @@
 ﻿#include "cache.h"
 
 #define RS(i) (i?LFU:LRU)
+#define RSM(i) (i?LFU_Maintain:LRU_Maintain)
 #define WS(i) (i?WTNA:WBWA)
 
 
@@ -30,7 +31,7 @@ int main(int argc, char const *argv[])
     std::cout << "  ===================================\n" << std::endl;
     
     // init cache
-    Cache* L1 = new Cache(size, blocksize, assoc, setsAmount, RS(replaceStrategy), WS(writeStrategy), nullptr);
+    Cache* L1 = new Cache(size, blocksize, assoc, setsAmount, RS(replaceStrategy), WS(writeStrategy), RSM(replaceStrategy), nullptr);
     if(L1 == nullptr)
     {
         std::cout << "Failed to init the cache!" << std::endl;
