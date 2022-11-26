@@ -1,0 +1,8 @@
+
+.vscode/c_cpp_properties.json
+sim_cache.exe
+.vscode/tasks.json
+.vscode/targets.log
+.vscode/configurationCache.log
+.vscode/dryrun.log
+.vscode/launch.json
