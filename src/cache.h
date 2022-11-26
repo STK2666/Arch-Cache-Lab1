@@ -1,8 +1,8 @@
 #pragma once
-#include<tuple>
-#include<list>
-#include<utility>
-#include<unordered_map>
+#include <tuple>
+#include <list>
+#include <utility>
+#include <unordered_map>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -12,11 +12,14 @@ using uint = unsigned int;
 
 struct Block
 {
+	bool valid;
 	uint addr;
+	uint tag;
+	uint index;
 	uint count;
 	bool isDirty;
-	Block(): addr(0), count(0), isDirty(false) {};
-	Block(uint _addr, uint _count, bool _isDirty): addr(_addr), count(_count), isDirty(_isDirty) {};
+	Block(): valid(false), addr(0), tag(0), index(0), count(0), isDirty(false) {};
+	Block(bool _valid, uint _addr, uint _tag, uint _index, uint _count, bool _isDirty): valid(_valid), addr(_addr), tag(_tag), index(_index), count(_count), isDirty(_isDirty) {};
 };
 typedef struct Block Block;
 

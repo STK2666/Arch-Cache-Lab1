@@ -12,6 +12,7 @@ Set* Cache::initSetList()
     Block* blockIter = blockListHead;
     for(int i = 0; i<c_setsAmount; i++)
     {
+        // 每个组的第一个block间隔组相联度个块
         setList[i].head = blockIter;
         blockIter += c_assoc;
     }
@@ -95,7 +96,7 @@ bool Cache::readFromAddress(uint addr)
     uint index = addr/c_blockSize;  // 块索引
     uint setIndex = index % c_setsAmount;   // 组索引
 
-    uint blockIndex = 0;    //块的内部索引
+    uint blockIndex = 0;    //组内块索引
     Block* blockTemp = setList[setIndex].head;  //块内部索引对应的位置
 
     bool writeBack = false;
@@ -123,7 +124,7 @@ bool Cache::writeFromAddress(uint addr)
     uint index = addr/c_blockSize;  // 块索引
     uint setIndex = index % c_setsAmount;   // 组索引
 
-    uint blockIndex = 0;    //块的内部索引
+    uint blockIndex = 0;    //组内块索引
     Block* blockTemp = setList[setIndex].head;  //块内部索引对应的位置
 
     bool hit = isHit(index);
@@ -152,10 +153,12 @@ bool LRU(uint index, uint setIndex, uint blockIndex, Block *blockTemp, bool hit,
         }
         else if(cache->setList[setIndex].occupiedBlock == assoc)
         {
-            uint max = 0, blockIndex = 0;
+            uint max = 0;
+            //TODO:之前粗心把blockIndex写到上一行，于是变成局部变量了。
+            blockIndex = 0;
             for(uint i = 0; i < assoc; i++)
             {
-                if(blockTemp[i].count >= max)
+                if(blockTemp[i].count > max)
                 {
                     max = blockTemp[i].count;
                     blockIndex = i;
@@ -192,6 +195,7 @@ bool LFU(uint index, uint setIndex, uint blockIndex, Block *blockTemp, bool hit,
         else if(cache->setList[setIndex].occupiedBlock == assoc)
         {
             uint min = -1;
+            blockIndex = 0;
             for(uint i = 0; i < assoc; i++)
             {
                 if(blockTemp[i].count < min)
@@ -232,8 +236,10 @@ bool LRU_Maintain(uint index, uint setIndex, uint blockIndex, Block *blockTemp, 
         {
             blockIndex = cache->setList[setIndex].occupiedBlock++;
             for(uint i= 0; i < blockIndex; i++)   blockTemp[i].count++;
+            blockTemp[blockIndex].count = 0;
+            //TODO:没初始化竟然错了（默认构造函数里明明就完成了预设的初始化），以后切记无论任何情况都要初始化
         }
-        else if(cache->setList[setIndex].occupiedBlock == assoc)//TODO:现在的问题是WTNA的时候不maintainCounter导致计数错误？不是，因为不用maintain，应该是替换的块有问题。
+        else if(cache->setList[setIndex].occupiedBlock == assoc)
         {
             Block* blockHit = cache->hashMap->at(index);
             for(uint i = 0; i < assoc; i++) blockTemp[i].count = (&blockTemp[i] == blockHit)? 0 : (blockTemp[i].count+1);
@@ -258,17 +264,19 @@ bool LFU_Maintain(uint index, uint setIndex, uint blockIndex, Block *blockTemp, 
     }
     else
     {
+        if(cache->setList[setIndex].occupiedBlock == 0)
+            cache->setList[setIndex].age = 0;
         if(cache->setList[setIndex].occupiedBlock < assoc)  // set未满
         {
             blockIndex = cache->setList[setIndex].occupiedBlock++;
             blockTemp[blockIndex].count = cache->setList[setIndex].age+1;
         }
-        else if(cache->setList[setIndex].occupiedBlock == assoc)//TODO:现在的问题是WTNA的时候不maintainCounter导致计数错误？不是，因为不用maintain，应该是替换的块有问题。
+        else if(cache->setList[setIndex].occupiedBlock == assoc)
         {
             Block* blockHit = cache->hashMap->at(index);
-            cache->setList[setIndex].age = blockTemp[blockIndex].count;
-            blockTemp[blockIndex].count++;
-            
+            cache->setList[setIndex].age = blockHit->count;
+            blockHit->count++;
+            blockHit->isDirty = isWrite;//TODO:少写一行代码你能怪谁呢？
         }
         else
         {
@@ -277,158 +285,6 @@ bool LFU_Maintain(uint index, uint setIndex, uint blockIndex, Block *blockTemp, 
     }
 
     return true;
-}
-
-bool LRUU(uint addr, Cache* cache)
-{
-    bool writeBack = false;
-    uint index = addr/cache->getBlockSize();
-    uint setIndex = index % cache->getSetsAmount();
-    uint assoc = cache->getAssoc();
-
-    uint blockIndex = 0;
-    Block* blockTemp = cache->setList[setIndex].head;
-    if(!cache->hashMap->count(index))
-    {
-        if(cache->setList[setIndex].occupiedBlock < assoc)
-        {
-            uint blockIndex = cache->setList[setIndex].occupiedBlock++;
-            for(uint i= 0; i < blockIndex; i++)   blockTemp[i].count++;
-        }
-        else if(cache->setList[setIndex].occupiedBlock == assoc)
-        {
-            uint max = 0;
-            for(uint i = 0; i < assoc; i++)
-            {
-                if(blockTemp[i].count > max)
-                {
-                    max = blockTemp[i].count++;
-                    blockIndex = i;
-                }
-                else    blockTemp[i].count++;
-            }
-            if(blockTemp[blockIndex].isDirty)   writeBack = true;
-            blockTemp[blockIndex].count = 0;
-            blockTemp[blockIndex].isDirty = false;
-            cache->hashMap->erase(blockTemp[blockIndex].addr);
-        }
-        else
-        {
-            std::cout << "Error! the set" << setIndex << "is overflow!" << std::endl;
-        }
-        cache->hashMap->emplace(std::make_pair(index,blockTemp+blockIndex));
-        blockTemp[blockIndex].addr = index;
-    }
-    else
-    {
-        Block* blockHit = cache->hashMap->at(index);
-        uint offset = (uint)blockHit % assoc;
-        blockHit -= offset;
-        for(uint i = 0; i < assoc; i++) blockHit[i].count = (i == offset)? 0 : (blockHit[i].count+1);
-    }
-
-    return writeBack;
-}
-
-bool LFUU(uint addr, Cache* cache)
-{
-    bool writeBack = false;
-    uint index = addr/cache->getBlockSize();
-    uint setIndex = index % cache->getSetsAmount();
-    uint assoc = cache->getAssoc();
-
-    uint blockIndex = 0;
-    Block* blockTemp = cache->setList[setIndex].head;
-    if(!cache->hashMap->count(index))
-    {
-        if(cache->setList[setIndex].occupiedBlock < assoc)
-        {
-            blockIndex = cache->setList[setIndex].occupiedBlock++;
-            blockTemp[blockIndex].count = cache->setList[setIndex].age + 1;
-        }
-        else if(cache->setList[setIndex].occupiedBlock == assoc)
-        {
-            uint min = 0;
-            for(uint i = 0; i < assoc; i++)
-            {
-                if(blockTemp[i].count < min)
-                {
-                    min = blockTemp[i].count;
-                    blockIndex = i;
-                }
-            }
-            if(blockTemp[blockIndex].isDirty)   writeBack = true;
-            uint ageTemp = blockTemp[blockIndex].count;
-            blockTemp[blockIndex].count = cache->setList[setIndex].age + 1;
-            cache->setList[setIndex].age = ageTemp;
-            blockTemp[blockIndex].isDirty = false;
-            cache->hashMap->erase(blockTemp[blockIndex].addr);
-        }
-        else
-        {
-            std::cout << "Error! the set" << setIndex << "is overflow!" << std::endl;
-        }
-        cache->hashMap->emplace(std::make_pair(index,blockTemp+blockIndex));
-        blockTemp[blockIndex].addr = index;
-    }
-    else
-    {
-        Block* blockHit = cache->hashMap->at(index);
-        blockHit->count++;
-    }
-
-    return writeBack;
-}
-
-
-bool WBWAA(uint addr, Cache* cache)
-{
-    bool replace = false;
-    uint index = addr/cache->getBlockSize();
-    uint setIndex = index % cache->getSetsAmount();
-    uint assoc = cache->getAssoc();
-
-    uint blockIndex = 0;
-    Block* blockTemp = cache->setList[setIndex].head;
-
-    //Miss
-    if(!cache->hashMap->count(index))
-    {
-        replace = true;
-    }
-    //Hit
-    else
-    {
-        replace = false;
-        // Dirty
-    }
-
-    return replace;
-}
-
-bool WTNAA(uint addr, Cache* cache) 
-{
-    bool replace = false;
-    uint index = addr/cache->getBlockSize();
-    uint setIndex = index % cache->getSetsAmount();
-    uint assoc = cache->getAssoc();
-
-    uint blockIndex = 0;
-    Block* blockTemp = cache->setList[setIndex].head;
-
-    //Miss
-    if(!cache->hashMap->count(index))
-    {
-        replace = true;
-    }
-    //Hit
-    else
-    {
-        replace = false;
-        // Dirty
-    }
-
-    return replace;
 }
 
 bool WBWA(uint index, uint setIndex, uint blockIndex, Block *blockTemp, bool hit, Cache *cache)

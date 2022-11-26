@@ -17,7 +17,8 @@ int main(int argc, char const *argv[])
     uint setsAmount = size/(assoc*blocksize);
     uint replaceStrategy = (uint)atoi(argv[4]);
     uint writeStrategy = (uint)atoi(argv[5]);
-    std::string traceFilePath = argv[6];
+    std::string traceFilePath = "./traces/";
+    traceFilePath.append(argv[6]);
     traceFilePath.append(".txt");
 
     // print params on the console.
@@ -78,7 +79,7 @@ int main(int argc, char const *argv[])
     {
         std::cout << "set   " << std::setw(5) << std::dec << i <<":";
         for(uint j = 0; j < assoc; j++){
-            std::cout << "   " << std::hex << setList[i].head[j].addr;
+            std::cout << "   " << std::hex << setList[i].head[j].addr/setsAmount;
             if(setList[i].head[j].isDirty)  std::cout << " D";
             else    std::cout << "  ";
         }
