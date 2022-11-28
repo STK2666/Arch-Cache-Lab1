@@ -11,6 +11,11 @@ void printPerformance(std::tuple<uint, uint, uint, uint, uint> counters, std::tu
 int main(int argc, char const *argv[])
 {
     // init the params
+    if(argc < 7) 
+    {
+        std::cout << "Wrong command parameter numbers!" << std::endl;
+        return -1;
+    }
     uint blocksize = (uint)atoi(argv[1]);
     uint size = (uint)atoi(argv[2]);
     uint assoc = (uint)atoi(argv[3]);
@@ -18,19 +23,10 @@ int main(int argc, char const *argv[])
     uint replaceStrategy = (uint)atoi(argv[4]);
     uint writeStrategy = (uint)atoi(argv[5]);
     std::string traceFilePath = "./traces/";
-    traceFilePath.append(argv[6]);
-    traceFilePath.append(".txt");
+    std::string traceFileName = argv[6];
+    traceFileName.append(".txt");
+    traceFilePath.append(traceFileName);
 
-    // print params on the console.
-    std::cout << "  ===== Simulator configuration =====" << std::endl;
-    std::cout << "  L1_BLOCKSIZE:" << std::setw(22) << blocksize << std::endl;
-    std::cout << "  L1_SIZE:" << std::setw(27) << size << std::endl;
-    std::cout << "  L1_ASSOC:" << std::setw(26) << assoc << std::endl;
-    std::cout << "  L1_REPLACEMENT_POLICY:" << std::setw(13) << replaceStrategy << std::endl;
-    std::cout << "  L1_WRITE_POLICY:" << std::setw(19) << writeStrategy << std::endl;
-    std::cout << "  trace_file:" << std::setw(24) << traceFilePath << std::endl;
-    std::cout << "  ===================================\n" << std::endl;
-    
     // init cache
     Cache* L1 = new Cache(size, blocksize, assoc, setsAmount, RS(replaceStrategy), WS(writeStrategy), RSM(replaceStrategy), nullptr);
     if(L1 == nullptr)
@@ -73,13 +69,24 @@ int main(int argc, char const *argv[])
     }
     traceFile.close();
 
+    // print params on the console.
+    std::cout << "  ===== Simulator configuration =====" << std::endl;
+    std::cout << "  L1_BLOCKSIZE:" << std::setw(22) << blocksize << std::endl;
+    std::cout << "  L1_SIZE:" << std::setw(27) << size << std::endl;
+    std::cout << "  L1_ASSOC:" << std::setw(26) << assoc << std::endl;
+    std::cout << "  L1_REPLACEMENT_POLICY:" << std::setw(13) << replaceStrategy << std::endl;
+    std::cout << "  L1_WRITE_POLICY:" << std::setw(19) << writeStrategy << std::endl;
+    std::cout << "  trace_file:" << std::setw(24) << traceFileName << std::endl;
+    std::cout << "  ===================================\n" << std::endl;
+    
+
     std::cout << "===== L1 contents =====" << std::endl;
     Set *setList = &L1->setList[0];
     for(uint i = 0; i < setsAmount; i++)
     {
-        std::cout << "set   " << std::setw(5) << std::dec << i <<":";
+        std::cout << "set" << std::setw(4) << std::dec << i <<":";
         for(uint j = 0; j < assoc; j++){
-            std::cout << "   " << std::hex << setList[i].head[j].addr/setsAmount;
+            std::cout << std::hex << std::setw(8) << setList[i].head[j].addr/setsAmount;
             if(setList[i].head[j].isDirty)  std::cout << " D";
             else    std::cout << "  ";
         }

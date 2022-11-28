@@ -6,3 +6,4 @@ sim_cache.exe
 .vscode/configurationCache.log
 .vscode/dryrun.log
 .vscode/launch.json
+.vscode/settings.json
